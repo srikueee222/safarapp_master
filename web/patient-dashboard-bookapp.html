@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Patient-BookAppointment</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		<meta name="format-detection" content="telephone=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<!-- Fonts-->
+		<link rel="stylesheet" type="text/css" href="assets/fonts/fontawesome/font-awesome.min.css">
+		<!-- Vendors-->
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+		<!-- Datepicker -->
+		<link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/css/bootstrap-datetimepicker.min.css" rel="stylesheet" type="text/css" />
+		<link rel="stylesheet" type="text/css" href="assets/vendors/bootstrap4/bootstrap-grid.min.css">
+		<link rel="stylesheet" type="text/css" href="assets/vendors/bootstrap4/bootstrap.css">
+		<link rel="stylesheet" type="text/css" href="assets/vendors/magnific-popup/magnific-popup.min.css">
+		<link rel="stylesheet" type="text/css" href="assets/vendors/owl.carousel/owl.carousel.css">
+		<link rel="stylesheet" type="text/css" href="assets/vendors/_jquery/jquery.min.css">
+		<!-- <link rel="stylesheet" type="text/css" href="assets/vendors/bootstrap4/bootstrap-grid.min.css"> -->
+		<!-- <link rel="stylesheet" type="text/css" href="assets/vendors/bootstrap4/bootstrap-grid.min.css"> -->
+		<!-- App & fonts-->
+		<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+		<link rel="stylesheet" type="text/css" href="assets/css/main.css">
+		<!--[if lt IE 9]>
+			<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+	
+	<body>
+		<div class="page-wrap">
+			
+			<!-- header -->
+			<header class="header header-style-02">
+				
+				<div class="container">
+					<div class="header-logo"><a href="index.html"><img src="assets/img/logo.png" alt=""/></a></div>
+					
+					
+					<!-- consult-nav -->
+					<nav class="consult-nav">
+						
+						<!-- consult-menu -->
+						<ul class="consult-menu">
+							<li><a href="#">Manage Consultation</a>
+							</li>
+							<li><a href="#">Manage Prescription</a>
+							</li>
+							<li><a href="#">Manage Reports</a>
+							</li>
+							<li><a href="#">Manage Slots</a>
+							</li>
+						</ul><!-- consult-menu -->
+						
+						<div class="navbar-toggle"><span></span><span></span><span></span></div>
+					</nav><!-- End / consult-nav -->
+					
+				</div>
+			</header><!-- End / header -->
+			
+			<!-- Content-->
+			<div class="md-content">
+				<!-- page-title -->
+				<div class="page-title-1 pos-rel">
+					<div class="container">
+						<div class="pos-rel">
+							<div class='row d-flex justify-content-end'>
+							  <div class='col-lg-6 col-md-6 pl-0 pr-0'>
+								<div class='search-box'>
+								  <form class='search-form'>
+									<input class='form-control mb-0' placeholder='Patient Name / Mobile Number / Id' type='text'>
+									<button class='btn btn-link search-btn'>
+										<i class="fa fa-search" aria-hidden="true"></i>
+									</button>
+								  </form>
+								</div>
+							  </div>
+						</div>
+
+						<div class="row doc-block">
+							<div class="col-12">
+								<div class="row">
+									<div class="col-lg-2 col-md-2 col-sm-2 col-12 avatar-circle"><img src="assets/img/avatars/doctor.png" alt="doc-avatar" /></div>
+										<div class="col-12">
+											<ul class="doc-details">
+											<li>Mr. Andy Battle</li>
+											<li>#GSPAT000001</li>
+											<li>+44(0)330 581 001</li>
+											</ul>
+										</div>
+								</div>
+							</div>
+							<div class="col-12 xs-0">
+								<div class="col-12 xs-0">
+									<ul class="doc-app-details pt-0 xs-0">
+									<li>DOB: 05/09/1984</li>
+									<li>Type: Single</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+						</div>
+					</div>
+				</div><!-- End / page-title -->
+
+			<!-- Section -->
+			<section class="md-section circle-1 mt-5">
+
+				<div class="container mt-3 pb-3">
+					<div class="row">
+	
+						<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 mb30 text-left">
+							<h2>Book your Appointment</h2>
+							</div>
+							</div>
+		<div class="row">
+		
+						<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 mb30">
+							<div class="tour-booking-form">
+								<form>
+									<div class="row">
+										<div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
+											<div class="form-group">
+												<label class="control-label required" for="select">Appointment Slot</label>
+												<div class="input-group time" id="timepicker">
+													<input class="form-control" placeholder="HH:MM AM/PM"/><span class="input-group-append input-group-addon"><span class="input-group-text"><i class="fa fa-clock-o"></i></span></span>
+												  </div>
+											</div>
+										</div>
+										<div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
+											<div class="form-group">
+												<label class="control-label" for="name">Appointment Date</label>
+													<div class="input-group date" id="datepicker1">
+													  <input class="form-control" placeholder="MM/DD/YYYY"/><span class="input-group-append input-group-addon"><span class="input-group-text"><i class="fa fa-calendar"></i></span></span>
+													</div>
+											</div>
+										</div>										
+										
+										<div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
+											<div class="form-group">
+												<label class="control-label" for="title">Appointment Title</label>
+												<input id="name" type="text" placeholder="e.g Sprained ankle" class="form-control" required>
+											</div>
+										</div>
+										<div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
+											<div class="form-group">
+												<label class="control-label" for="location"> Email</label>
+												<input id="location" type="text" placeholder="e.g Barcelona, Spain" class="form-control" required>
+											</div>
+										</div>
+										<div class="col-xl-4 col-lg-4 col-md-12 col-sm-12 col-12">
+											<div class="form-group">
+												<label class="control-label" for="phone"> Phone</label>
+												<input id="phone" type="text" placeholder="(222) 222-2222" class="form-control" required>
+											</div>
+										</div>
+										<div class="col-xl-4 col-lg-4 col-md-12 col-sm-12 col-12">
+											<div class="form-group">
+												<label class="control-label" for="country">Country</label>
+												<input id="country" type="text" placeholder="Please enter here" class="form-control" required>
+											</div>
+										</div>
+										<div class="col-xl-4 col-lg-4 col-md-12 col-sm-12 col-12">
+											<div class="form-group">
+												<label class="control-label" for="city">City</label>
+												<input id="city" type="text" placeholder="Please enter here" class="form-control" required>
+											</div>
+										</div>
+										<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+											<div class="form-group">
+												<label class="control-label" for="textarea">Appointment Notes</label>
+												<textarea class="form-control" id="textarea" name="textarea" rows="4" placeholder="Please enter about your need for an appointment"></textarea>
+											</div>
+										</div>
+											<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 mb-3">
+												<div class="custom-control custom-checkbox">
+												  <input type="checkbox" class="custom-control-input" id="customCheck1">
+												  <label class="custom-control-label" for="customCheck1">I give consent for a Safar Doctor to access and review my Safar account medical records.</label>
+												</div>
+											</div>
+											<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 mb-4">
+												<div class="custom-control custom-checkbox">
+												  <input type="checkbox" class="custom-control-input" id="customCheck1">
+												  <label class="custom-control-label" for="customCheck1">I give consent for consultation appointment to be recorded.</label>
+												</div>
+											</div>
+										<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+											<button type="submit" name="singlebutton" class="btn btn-primary">Book Appointment</button>
+										</div>
+									</div>
+									</form>
+							</div>
+							
+						</div>
+		</div>
+				</div>
+
+			</section>
+			<!-- End / Section -->
+				
+			</div>
+			<!-- End / Content-->
+			
+			<!-- footer -->
+			<footer class="footer mt-0">
+				<div class="footer-main">
+					<div class="row row-eq-height">
+						<div class="col-8 col-sm-7 col-md-9 col-lg-3 ">
+							<div class="footer-item consult_logo"><img src="assets/img/logo.png" alt="footer-logo"/>
+							</div>
+						</div>
+						<div class="col-sm-6 col-md-4 col-lg-3 col-xl-2 offset-0 offset-sm-0 offset-md-0 offset-lg-0 offset-xl-1 ">
+							<div class="footer-item">
+									
+									<!-- widget-text__widget -->
+									<section class="widget-text-widget widget">
+										<div class="widget-text-content">
+											<ul>
+												<li><a href="about.html">About Safar</a></li>
+												<li><a href="partners.html">Partners </a></li>
+												<li><a href="corporate.html">Corporate</a></li>
+											</ul>
+										</div>
+									</section><!-- End / widget-text__widget -->
+									
+							</div>
+						</div>
+						<div class="col-sm-6 col-md-4 col-lg-2 col-xl-2 ">
+							<div class="footer-item">
+									
+									<!-- widget-text__widget -->
+									<section class="widget-text-widget widget">
+										<div class="widget-text-content">
+											<ul>
+												<li><a href="faqs.html">Faq's </a></li>
+												<li><a href="terms-conditions.html">Terms & Conditions </a></li>
+												<li><a href="privacy-policy.html">Privacy Policy </a></li>
+											</ul>
+										</div>
+									</section><!-- End / widget-text__widget -->
+									
+							</div>
+						</div>
+						<div class="col-md-4 col-lg-2 col-xl-2 " style="height: 149.425px;">
+							<div class="footer__item">
+								<h5>Corporate Partners</h5>
+								<div class="cp-txt">Helping your employees get the most out of their trip.</div>	
+							</div>
+						</div>
+						<div class="col-sm-6 col-md-4 col-lg-2 col-xl-2  consult-backToTop">
+							<div class="footer-item"><a href="#" id="back-to-top"> <i class="fa fa-angle-up" aria-hidden="true"> </i><span>Back To Top</span></a></div>
+						</div>
+					</div>
+				</div>
+				<div class="footer-copyright">2020 &copy; Copyright Safar. All rights Reserved.</div>
+			</footer>
+			<!-- End / footer -->
+			
+		</div>
+		<!-- Vendors-->
+		<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+		<script type="text/javascript" src="assets/vendors/jquery/jquery.min.js"></script>
+		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/eonasdan-bootstrap-datetimepicker/4.17.47/js/bootstrap-datetimepicker.min.js"></script>
+		<script type="text/javascript" src="assets/vendors/imagesloaded/imagesloaded.pkgd.js"></script>
+		<script type="text/javascript" src="assets/vendors/isotope-layout/isotope.pkgd.js"></script>
+		<script type="text/javascript" src="assets/vendors/jquery.countUp/jquery.countup.min.js"></script>
+		<script type="text/javascript" src="assets/vendors/jquery.matchHeight/jquery.matchHeight.min.js"></script>
+		<script type="text/javascript" src="assets/vendors/jquery.mb.ytplayer/jquery.mb.YTPlayer.min.js"></script>
+		<script type="text/javascript" src="assets/vendors/magnific-popup/jquery.magnific-popup.min.js"></script>
+		<script type="text/javascript" src="assets/vendors/masonry-layout/masonry.pkgd.js"></script>
+		<script type="text/javascript" src="assets/vendors/owl.carousel/owl.carousel.js"></script>
+		<script type="text/javascript" src="assets/vendors/jquery.waypoints/jquery.waypoints.min.js"></script>
+		<script type="text/javascript" src="assets/vendors/menu/menu.min.js"></script>
+		<script type="text/javascript" src="assets/vendors/smoothscroll/SmoothScroll.min.js"></script>
+		<!-- App-->
+		<script type="text/javascript" src="assets/js/main.js"></script>
+		<script type="text/javascript">
+			if (/Mobi/.test(navigator.userAgent)) {
+			// if mobile device, use native pickers
+			$(".date input").attr("type", "date");
+			$(".time input").attr("type", "time");
+			} else {
+			// if desktop device, use DateTimePicker
+			$("#datepicker1").datetimepicker({
+				useCurrent: false,
+				format: "L",
+				showTodayButton: true,
+				icons: {
+				next: "fa fa-chevron-right",
+				previous: "fa fa-chevron-left",
+				today: 'todayText',
+				}
+			});
+			$("#timepicker").datetimepicker({
+				format: "LT",
+				icons: {
+				up: "fa fa-chevron-up",
+				down: "fa fa-chevron-down"
+				}
+			});
+			}
+		</script>
+	</body>
+</html>

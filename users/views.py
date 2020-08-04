@@ -1,4 +1,3 @@
-
 import datetime
 
 import jwt
@@ -60,19 +59,16 @@ def login(request):
         return JsonResponse({'message': "Please provide username/password"}, status=status.HTTP_400_BAD_REQUEST)
     email = request.data['email']
     password = request.data['password']
-
     try:
         patient = User.objects.get(email=email)
         count_user_id = UserToken.objects.filter(user_id=patient.id).count()
     except User.DoesNotExist:
-        return JsonResponse({'message': "Invalid username/password"}, status=status.HTTP_400_BAD_REQUEST)
-
-    print("password", password, "patient.password", patient.password)
+        return JsonResponse({'message': "User does not exist"}, status=status.HTTP_400_BAD_REQUEST)
 
     if patient and (password == patient.password):
-        payload_access_token = getPayload(patient.id, JWT_ACCESS_TOKEN_LIFE_SPAN)
+        payload_access_token = getPayload(patient.id, patient.isPatient, JWT_ACCESS_TOKEN_LIFE_SPAN)
         payload_refresh_token = getPayload(
-            patient.id, JWT_REFRESH_TOKEN_LIFE_SPAN)
+            patient.id, patient.isPatient, JWT_REFRESH_TOKEN_LIFE_SPAN)
         jwt_access_token = jwt.encode(
             payload_access_token, SECRET_KEY, algorithm='HS256')
         jwt_refresh_token = jwt.encode(
@@ -80,15 +76,15 @@ def login(request):
 
         if int(count_user_id) > 0:
             UserToken.objects.filter(user_id=patient.id).update(
-                access_token=jwt_access_token, refresh_token=jwt_refresh_token)
+                access_token=jwt_access_token, refresh_token=jwt_refresh_token, isPatient=patient.isPatient)
         else:
             user_token_instance = UserToken(
-                access_token=jwt_access_token, refresh_token=jwt_refresh_token, user_id=patient.id)
+                access_token=jwt_access_token, refresh_token=jwt_refresh_token, user_id=patient.id, isPatient=patient.isPatient)
             user_token_instance.save()
 
         userToken = UserToken.objects.get(user_id=patient.id)
-        serialzer_utoken = UserTokenSerializer(userToken)
-        return JsonResponse(serialzer_utoken.data, status=status.HTTP_200_OK)
+        serilzer_token = UserTokenSerializer(userToken)
+        return JsonResponse(serilzer_token.data, status=status.HTTP_200_OK)
     else:
         return JsonResponse({'message': "Invalid credentials"}, status=status.HTTP_400_BAD_REQUEST)
 
@@ -103,9 +99,10 @@ def getPatientDetails(request):
     return JsonResponse(patient_serializer.data, status=status.HTTP_200_OK)
 
 
-def getPayload(info, timeDelta):
+def getPayload(info, patient, timeDelta):
     payload = {
         'info': info,
+        'isPatient': patient,
         'iat': datetime.datetime.utcnow(),
         'exp': datetime.datetime.utcnow() + datetime.timedelta(days=0, seconds=timeDelta)
     }
